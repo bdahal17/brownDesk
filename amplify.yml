@@ -1,0 +1,25 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "No frontend build steps defined"
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: target
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+
+backend:
+  phases:
+    build:
+      commands:
+        - mvn clean package
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: target
+    files:
+      - '**/*'
